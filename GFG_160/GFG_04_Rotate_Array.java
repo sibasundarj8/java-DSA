@@ -1,5 +1,16 @@
-package GFG_160;
-
+package GFG_160;/*
+ * https://www.geeksforgeeks.org/problems/rotate-array-by-n-elements-1587115621/1
+ *
+ * # Rotate Array
+ *
+ *   Q. Given an unsorted array arr[]. Rotate the array to the left (counter-clockwise direction) by d
+ *      steps, where d is a positive integer. Do the mentioned change in the array in place.
+ *    Ex.
+ *      Input : arr[] = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20] 
+ *              d = 3
+ *      Output: arr[] = [8, 10, 12, 14, 16, 18, 20, 2, 4, 6]
+ *      Explanation: when rotated by 3 elements, it becomes 8 10 12 14 16 18 20 2 4 6.
+ */
 import java.util.Scanner;
 
 public class GFG_04_Rotate_Array {
