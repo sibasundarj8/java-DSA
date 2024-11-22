@@ -11,7 +11,7 @@ package Strings;/*
  */
 import java.util.Scanner;
 
-public class Longest_valid_Parentheses {
+public class S5_Longest_valid_Parentheses {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the String :");
