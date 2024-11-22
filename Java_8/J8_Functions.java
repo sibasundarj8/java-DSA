@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
-
+/// Represents a function that accepts one argument and produces a result.
 public class J8_Functions {
     public static void main(String[] args) {
 
