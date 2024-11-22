@@ -31,7 +31,7 @@ public class S6_Max_Distance {
         System.out.println("Char: ");
         char ch = sc.next().charAt(0);
 
-
+        System.out.println(maxDistance(s, ch));
     }
 
     /// Solution
