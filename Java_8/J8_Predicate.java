@@ -1,7 +1,7 @@
 package Java_8;
 
 import java.util.function.Predicate;
-
+/// Represents a predicate (boolean-valued function) of one argument.
 public class J8_Predicate {
     /// main Method
     public static void main(String[] args) {
