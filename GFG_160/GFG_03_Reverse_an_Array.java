@@ -1,5 +1,4 @@
-package GFG_160;
-/*
+package GFG_160;/*
  * https://www.geeksforgeeks.org/problems/reverse-an-array/1
  *
  * # Reverse an Array
