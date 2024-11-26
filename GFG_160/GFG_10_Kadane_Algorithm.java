@@ -35,11 +35,10 @@ public class GFG_10_Kadane_Algorithm {
         // potd.code.hub
         int sum = 0;
         int ans = Integer.MIN_VALUE;
-
+        
         for (int i : arr){
-            sum += i;
+            sum = Math.max(sum+i, i);
             ans = Math.max(ans, sum);
-            if (sum < 0) sum = 0;
         }
 
         return ans;
