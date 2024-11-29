@@ -44,15 +44,13 @@ public class Array_03_Maximize_Number_of_1s {
 
         int count = 0;
         int i = 0, j = 0;
-        while (j < n){
-            if (count <= k){
-                if (arr[j] == 0) count++;
-                j++;
-            }
+        while (j < n){ 
+            if (arr[j] == 0) count++;
             if (count > k){
                 if (arr[i] == 0) count--;
                 i++;
             }
+            j++;
             ans = Math.max(ans, j-i);
         }
 
