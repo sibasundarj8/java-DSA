@@ -1,4 +1,4 @@
-package GFG_160.Bonus_Problems;/*
+package GFG_160;/*
  * https://www.geeksforgeeks.org/problems/add-binary-strings3805/1
  *
  * # Add Binary Strings
