@@ -49,7 +49,7 @@ public class Array_03_Maximize_Number_of_1s {
                 if (arr[j] == 0) count++;
                 j++;
             }
-            if (count > k && i < j){
+            if (count > k){
                 if (arr[i] == 0) count--;
                 i++;
             }
