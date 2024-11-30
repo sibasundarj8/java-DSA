@@ -5,7 +5,7 @@ interface LE {
 }
 
 interface AC {
-    void sayHello();
+    void sayHello(int x);
     void printName();
 }
 
@@ -13,13 +13,18 @@ public class J8_Lambda_vs_Anonymous_Inner_Class {
     public static void main(String[] args) {
 
         // lambda (always in Functional Interface)
-        LE le = () -> System.out.println("I am lambda expression");
+        LE le = () -> {
+            int x = 236;    // Local variable
+            System.out.println("I am lambda expression " + x);
+        };
 
         // anonymous inner class
         AC ac = new AC() {
+            int x;    // Instance variable
             @Override
-            public void sayHello() {
-                System.out.println("I am anonymous inner class");
+            public void sayHello(int x) {
+                this.x = x;
+                System.out.println("I am anonymous inner class " + this.x);
             }
             @Override
             public void printName() {
@@ -28,7 +33,7 @@ public class J8_Lambda_vs_Anonymous_Inner_Class {
         };
 
         le.sayHello();
-        ac.sayHello();
+        ac.sayHello(236);
         ac.printName();
     }
 }
