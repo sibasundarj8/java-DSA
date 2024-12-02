@@ -43,6 +43,7 @@ public class GFG_18_Search_Pattern_KMP_Algorithm {
         }
         return ans;
     }
+    // Longest prefix and suffix
     static void lps (String s, int[]ans){
         int n = s.length();
         int i = 0, j = 1;
