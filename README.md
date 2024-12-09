@@ -11,4 +11,4 @@ This repository is all about data structures and algorithms implemented in Java.
 
 [![geeksforgeeks ](https://img.shields.io/badge/GeeksforGeeks-298D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white)](https://www.geeksforgeeks.org/user/sibasundarj8/)
 
-[![spotify ](https://img.shields.io/badge/Spotif-1ed760?&style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/playlist/1GPpJXdiz2NO8zmfqZ8Jw0?si=3738486fa9d4468e)
+[![spotify ](https://img.shields.io/badge/Spotif-1ed760?&style=for-the-badge&logo=spotify&logoColor=black)](https://open.spotify.com/playlist/1GPpJXdiz2NO8zmfqZ8Jw0?si=3738486fa9d4468e)
