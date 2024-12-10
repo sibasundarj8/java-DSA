@@ -41,59 +41,26 @@ public class Array_01_Split_array_in_three_equal_sum_subArrays {
     }
 
     /// Solution
-    public static List<Integer> findSplit(int[] arr) {
+    static List<Integer> findSplit(int[] arr) {
         // potd.code.hub
-        List<Integer> ans = new ArrayList<>();
         int n = arr.length;
 
-        // Finding Total
         int total = 0;
-        for (int value : arr) {
-            total += value;
-        }
+        for(int i : arr) total += i;
 
-        // Checking partition possible or not
-        if (n < 3 || total % 3 != 0){
-            ans.add(-1);
-            ans.add(-1);
-            return ans;
-        }
+        if (total % 3 != 0) return Arrays.asList(-1, -1);
 
-        /// finding the indices
-        int sum = total / 3;
-        int prefix = 0;
-        int i = 0;
-        int k = 0;
-
-        // Finding i
-        while (i < n-2) {
-            prefix += arr[i];
-            if (prefix == sum){
-                k = prefix;
-                break;
+        int sum = 0, count = 0, i1 = 0;
+        for (int i = 0;i < n;i++){
+            sum += arr[i];
+            if (sum == total/3){
+                count++;
+                sum = 0;
+                if (count == 2) return Arrays.asList(i1, i);
+                else i1 = i;
             }
-            i++;
         }
 
-        // Finding j
-        int j = i+1;
-        while (j < n-1) {
-            prefix += arr[j];
-            if (total - prefix == sum) break;
-            j++;
-        }
-
-        // Checking indices are valid or not
-        if (i != j && prefix-k == sum){
-            ans.add(i);
-            ans.add(j);
-        }
-        else {
-            ans.add(-1);
-            ans.add(-1);
-        }
-        
-        // Returning Answer
-        return ans;
+        return Arrays.asList(-1, -1);
     }
 }
