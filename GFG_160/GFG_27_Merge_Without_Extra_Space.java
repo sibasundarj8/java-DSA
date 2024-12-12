@@ -1,4 +1,4 @@
-package GFG_160.Bonus_Problems;/*
+package GFG_160;/*
  * https://www.geeksforgeeks.org/problems/merge-two-sorted-arrays-1587115620/1
  *
  * # Merge Without Extra Space
