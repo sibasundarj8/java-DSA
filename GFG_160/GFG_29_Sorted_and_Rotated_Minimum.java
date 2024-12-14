@@ -40,10 +40,7 @@ public class GFG_29_Sorted_and_Rotated_Minimum {
         while (i <= j) {
             int mid = i + (j - i) / 2;
             ans = Math.min(ans, arr[mid]);
-            if (arr[mid] <= arr[j]) {
-                ans = Math.min(arr[i], ans);
-                j = mid - 1;
-            }
+            if (arr[mid] <= arr[j]) j = mid - 1;
             else if (arr[i] <= arr[mid]) i = mid + 1;
         }
 
