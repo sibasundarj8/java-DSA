@@ -52,23 +52,23 @@ public class GFG_32_Kth_element_of_two_Arrays {
     /// Solution
     static int kthElement(int[]a, int[]b, int k) {
         // potd.code.hub
-        int n = a.length, m = b.length;
+        int n1 = a.length, n2 = b.length;
+        if (n1 > n2) return kthElement(b, a, k);
 
-        int i = 0, j = 0;
-        while (i < n && j < m){
-            k--;
-            if (a[i] < b[j]){
-                if (k == 0) return a[i];
-                i++;
-            }
-            else {
-                if (k == 0) return b[j];
-                j++;
-            }
+        int i = Math.max(0, k-n2), j = Math.min(k, n1);
+        while (i <= j){
+            int mid1 = i + (j-i)/2;
+            int mid2 = k - mid1;
+            int l1 = (mid1-1 >= 0) ? a[mid1-1] : Integer.MIN_VALUE;
+            int l2 = (mid2-1 >= 0) ? b[mid2-1] : Integer.MIN_VALUE;
+            int r1 = (mid1 < n1) ? a[mid1] : Integer.MAX_VALUE;
+            int r2 = (mid2 < n2) ? b[mid2] : Integer.MAX_VALUE;
+
+            if (l1 <= r2 && l2 <= r1) return Math.max(l1, l2);
+            else if (l1 > r2) j = mid1-1;
+            else i = mid1+1;
         }
-        if (i < n && k > 0) return a[i+k-1];
-        else if (j < m && k > 0) return b[j+k-1];
 
-        return -1;
+        return 0;
     }
 }
