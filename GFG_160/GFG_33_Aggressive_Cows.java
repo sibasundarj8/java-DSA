@@ -48,19 +48,15 @@ public class GFG_33_Aggressive_Cows {
         // potd.code.hub
         int n = stalls.length;
         Arrays.sort(stalls);
-        int ans = -1;
 
         int i = 0, j = stalls[n-1] - stalls[0];
         while (i <= j) {
             int mid = i + (j-i)/2;
-            if (canWePlace(stalls, n, k, mid)){
-                ans = mid;
-                i = mid+1;
-            }
+            if (canWePlace(stalls, n, k, mid)) i = mid+1;
             else j = mid-1;
         }
 
-        return ans;
+        return j;
     }
     private static boolean canWePlace(int[]arr, int n, int k, int dist){
         int count = 1;
