@@ -16,7 +16,7 @@ package GFG_160;/*
  *                              [1, 4, 7]
  */
 import java.util.Scanner;
-
+ 
 public class GFG_37_Rotate_by_90_degree {
 
     /// main Method
