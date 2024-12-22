@@ -29,7 +29,7 @@ public class GFG_36_Spirally_traversing_a_matrix {
     /// main Method
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+ 
         System.out.println("Enter Dimensions: ");
         int n = sc.nextInt();
         int m = sc.nextInt();
