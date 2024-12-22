@@ -13,7 +13,7 @@ package GFG_160;/*
  *      Explanation: Missing are 1, 5, 6, 8, 9, 10… and 5th missing number is 9.
  *
  */
-
+ 
 import java.util.Scanner;
 
 public class GFG_35_Kth_Missing_Positive_Number_in_a_Sorted_Array {
