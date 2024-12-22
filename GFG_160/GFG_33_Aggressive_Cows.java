@@ -17,7 +17,7 @@ package GFG_160;/*
  *                   between cows, in this case, is 4, which also is the largest among all possible
  *                   ways.
  */
-
+ 
 import java.util.Arrays;
 import java.util.Scanner;
 
