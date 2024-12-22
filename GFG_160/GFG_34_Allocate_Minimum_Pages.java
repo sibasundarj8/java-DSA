@@ -36,7 +36,7 @@ public class GFG_34_Allocate_Minimum_Pages {
     /// main Method
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+ 
         System.out.println("Number of books : ");
         int n = sc.nextInt();
 
