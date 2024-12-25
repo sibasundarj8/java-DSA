@@ -67,7 +67,7 @@ public class GFG_41_Set_Matrix_Zeroes {
             }
         }
 
-        // Setting rows to 0
+        // Setting rows and columns to 0 !(i == 0 || j == 0)
         for (int i = 1; i < r;i++)
             for (int j = 1; j < c; j++)
                 if (mat[0][j] == 0 || mat[i][0] == 0)
