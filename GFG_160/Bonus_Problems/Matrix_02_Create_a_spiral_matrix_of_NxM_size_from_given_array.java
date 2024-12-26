@@ -17,7 +17,7 @@ package GFG_160.Bonus_Problems;/*
  */
 import java.util.Scanner;
 
-public class Matrix_Create_a_spiral_matrix_of_NxM_size_from_given_array {
+public class Matrix_02_Create_a_spiral_matrix_of_NxM_size_from_given_array {
 
     /// main Method
     public static void main(String[] args) {
