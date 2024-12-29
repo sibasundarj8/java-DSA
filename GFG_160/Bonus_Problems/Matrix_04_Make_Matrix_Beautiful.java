@@ -17,7 +17,7 @@ package GFG_160.Bonus_Problems;/*
  *                   and columns have sum of 9.
  */
 import java.util.Scanner;
-  
+   
 public class Matrix_04_Make_Matrix_Beautiful {
 
     /// main Method
