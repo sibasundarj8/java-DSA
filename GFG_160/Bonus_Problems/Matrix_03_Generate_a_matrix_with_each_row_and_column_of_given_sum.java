@@ -23,7 +23,7 @@ package GFG_160.Bonus_Problems;/*
  *                 equal to 8.
  */
 import java.util.Scanner;
-
+ 
 public class Matrix_03_Generate_a_matrix_with_each_row_and_column_of_given_sum {
 
     /// main Method
