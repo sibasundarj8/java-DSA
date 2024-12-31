@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.util.Scanner;
 
-public class L5_delete_Middle_Element {
+public class L05_delete_Middle_Element {
     static class Node{
         int data;
         Node next;
