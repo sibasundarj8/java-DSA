@@ -18,7 +18,7 @@ package LinkedList;
  */
 import java.util.Scanner;
 
-public class L9_Split_Linked_List_Alternatively {
+public class L09_Split_Linked_List_Alternatively {
     static class Node{
         int data;
         Node next;
