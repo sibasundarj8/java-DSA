@@ -1,4 +1,4 @@
-/*
+package LinkedList;/*
  *   Q. Given the head of a linked list and the number k, Your task is to find the kth node from the end.
  *      If k is more than the number of nodes, then the output should be -1.
  *    Ex.
@@ -6,12 +6,9 @@
  *      Output: 8
  *      Explanation: The given linked list is 1->2->3->4->5->6->7->8->9. The 2nd node from the end is 8.
  */
-package LinkedList;
-
-
 import java.util.Scanner;
 
-public class L3_Kth_from_End_of_Linked_List {
+public class L03_Kth_from_End_of_Linked_List {
     static  class Node {
         int data;
         Node next;
