@@ -20,7 +20,7 @@ public class GFG_48_Print_Anagrams_Together {
 
     /// main method
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); 
 
         HashMap<String, String> map = new HashMap<>();
 
