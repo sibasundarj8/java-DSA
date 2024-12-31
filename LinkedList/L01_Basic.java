@@ -8,7 +8,7 @@ class Node{
         this.next = null;
     }
 }
-public class L1_Basic {
+public class L01_Basic {
     public static void main(String[] args) {
 
         // LinkedList Initialization
