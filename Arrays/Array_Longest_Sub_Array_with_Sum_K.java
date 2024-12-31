@@ -15,7 +15,7 @@ package Array;/*
  */
 import java.util.HashMap;
 import java.util.Scanner;
-
+ 
 public class Array_Longest_Sub_Array_with_Sum_K {
 
     /// main Method
