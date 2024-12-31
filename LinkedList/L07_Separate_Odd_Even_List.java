@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.util.Scanner;
 
-public class L7_Separate_Odd_Even_List {
+public class L07_Separate_Odd_Even_List {
     static class Node {
         int data;
         Node next;
