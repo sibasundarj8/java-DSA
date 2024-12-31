@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.util.Scanner;
 
-public class L6_Merge_Two_Sorted_Lists {
+public class L06_Merge_Two_Sorted_Lists {
     static class Node{
         int data;
         Node next;
