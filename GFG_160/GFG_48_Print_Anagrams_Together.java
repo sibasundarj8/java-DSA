@@ -15,7 +15,7 @@ package GFG_160;/*
  *                   group 2.
  */
 import java.util.*;
-
+ 
 public class GFG_48_Print_Anagrams_Together {
 
     /// main method
