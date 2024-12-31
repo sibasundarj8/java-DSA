@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.util.Scanner;
 
-public class L4_Reverse_Linked_List {
+public class L04_Reverse_Linked_List {
     static class Node {
         int data;
         Node next;
