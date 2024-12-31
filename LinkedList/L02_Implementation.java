@@ -66,7 +66,7 @@ class Linkedlist{
         return size;
     }
 }
-public class L2_Implementation {
+public class L02_Implementation {
 
     public static void main(String[] args) {
         Linkedlist head = new Linkedlist();
