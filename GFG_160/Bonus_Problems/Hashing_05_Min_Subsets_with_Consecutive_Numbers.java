@@ -35,11 +35,11 @@ public class Hashing_05_Min_Subsets_with_Consecutive_Numbers {
     /// Solution
     static int numOfSubset(int...arr) {
         // potd.code.hub
-        Arrays.sort(arr);
-        int n = arr.length, count = 1;
-        for (int i = 1;i < n;i++)
-            if (arr[i] != arr[i-1]+1) count++;
-        
+        HashSet<Integer> set = new HashSet<>();
+        int count = 0;
+        for (int i : arr) set.add(i);
+        for (int i : arr) if (!set.contains(i-1)) count++;
+
         return count;
     }
 }
