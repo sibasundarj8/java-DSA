@@ -6,7 +6,7 @@ package GFG_160;/*
  *
  *   Q. Given a string s, find the length of the longest substring with all distinct characters.
  *    Ex.
- *      Input : s = "geeksforgeeks" 
+ *      Input : s = "geeksforgeeks"
  *      Output: 7
  *      Explanation: "eksforg" is the longest substring with all distinct characters.
  */
