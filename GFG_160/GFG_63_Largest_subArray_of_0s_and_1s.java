@@ -6,7 +6,7 @@ package GFG_160;/*
  *
  *   Q. Given an array arr of 0s and 1s. Find and return the length of the longest sub-array with
  *      equal number of 0s and 1s.
- *    Ex.
+ *    Ex. 
  *      Input : arr[] = [1, 0, 1, 1, 1, 0, 0]
  *      Output: 6
  *      Explanation: arr[1...6] is the longest sub-array with three 0s and three 1s.
