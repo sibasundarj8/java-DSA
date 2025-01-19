@@ -1,5 +1,14 @@
-package GFG_160;
-
+package GFG_160;/*
+ * 
+ * https://www.geeksforgeeks.org/problems/reverse-a-linked-list/1
+ * 
+ * # Reverse a linked list
+ * 
+ *   Q. Given the head of a linked list, the task is to reverse this list and return the reversed head.
+ *    Ex.
+ *      Input : head: 1 -> 2 -> 3 -> 4 -> NULL
+ *      Output: head: 4 -> 3 -> 2 -> 1 -> NULL
+ */
 import java.util.Scanner;
 
 public class GFG_65_Reverse_a_linked_list {
