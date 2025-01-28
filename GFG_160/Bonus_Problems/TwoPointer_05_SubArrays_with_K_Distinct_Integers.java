@@ -2,7 +2,7 @@ package GFG_160.Bonus_Problems;/*
  *
  * https://www.geeksforgeeks.org/problems/subarrays-with-k-different-integers/0
  *
- * # Sub-arrays with K Distinct Integers
+ * # Sub-arrays with K Distinct Integers 
  *
  *   Q. You are given an array arr[] of positive integers and an integer k, find the number of
  *      sub-arrays in arr[] where the count of distinct integers is exactly k.
