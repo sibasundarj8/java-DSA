@@ -53,8 +53,7 @@ public class PrefixSum_01_Number_of_times_graph_cuts_X_axis {
         // potd.code.hub
         int prefix = 0, ans = 0;
         for (int i : arr) {
-            if (prefix > 0 && prefix + i <= 0) ans++;
-            else if (prefix < 0 && prefix + i >= 0) ans++;
+            if (prefix > 0 && prefix + i <= 0 || prefix < 0 && prefix + i >= 0) ans++;
             prefix += i;
         }
         return ans;
