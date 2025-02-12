@@ -1,5 +1,5 @@
 package GFG_160.Bonus_Problems;/*
- * 
+ *
  * https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1
  *
  * # Flattening a Linked List
