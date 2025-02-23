@@ -10,7 +10,7 @@ package GFG_160;/*
  *      A parenthesis string is valid if:
  *          ● For every opening parenthesis, there is a closing parenthesis.
  *          ● The closing parenthesis must be after its opening parenthesis.
- *    Ex.
+ *    Ex. 
  *      Input : s = ")()())"
  *      Output: 4
  *      Explanation: The longest valid parenthesis substring is "()()".
