@@ -10,7 +10,7 @@ package GFG_160;/*
  *      no elements without changing the order of the remaining elements.
  *
  *      A palindromic sequence is a sequence that reads the same forward and backward.
- *   Ex.
+ *   Ex. 
  *      Input : s = "bbabcbcab"
  *      Output: 7
  *      Explanation: Subsequence "babcbab" is the longest subsequence which is also a palindrome.
