@@ -1,5 +1,5 @@
 # Hi, I'm Sibasundar ! 👋
-This repository is all about data structures and algorithms implemented in Java.
+This repository is all about data structures and algorithms implemented using Java.
 
 .
 ## 🔗 Links
