@@ -38,19 +38,15 @@ public class GFG_117_Ways_to_Reach_the_Nth_Stair {
 class Solution{
     /// Solution
     private static final long[] freq = new long[45];
-    Solution(){
-        if (freq[0] == 0){
-            freq[0] = 1;
-            countWays(44);
-        }
+    static {
+        freq[0] = 1;
+        freq[1] = 1;
+        for (int i = 2;i < 45;i++)
+            freq[i] = freq[i-1] + freq[i-2];
     }
+
     int countWays(int n){
         // potd.code.hub
-        if (n == 1 || n == 2) return n;
-        if (freq[n] != 0) return (int) freq[n];
-        
-        // self-work
-        freq[n] = countWays(n-1) + countWays(n-2);
-        return (int) freq[n];
+        return (int)freq[n];
     }
 }
