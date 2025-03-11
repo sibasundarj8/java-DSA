@@ -32,7 +32,7 @@ public class LeetCode_2523_Closest_Prime_Numbers_in_Range {
 
         System.out.println("Num 2: ");
         int m = sc.nextInt();
-
+ 
         String ans = Arrays.toString(new Solution().closestPrimes(n, m));
         System.out.println(ans);
     }
