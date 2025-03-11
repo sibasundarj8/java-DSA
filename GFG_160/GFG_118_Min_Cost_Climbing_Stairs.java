@@ -2,7 +2,7 @@ package GFG_160;/*
  *
  * https://www.geeksforgeeks.org/problems/min-cost-climbing-stairs/1
  *
- * # Min Cost Climbing Stairs
+ * # Min Cost Climbing Stairs 
  *
  *   Q. Given an array of integer's cost[] where cost[i] is the cost of the ith step on a staircase.
  *      Once the cost is paid, you can either climb one or two steps. Return the minimum cost to
