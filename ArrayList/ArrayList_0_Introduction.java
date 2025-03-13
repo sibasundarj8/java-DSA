@@ -9,7 +9,7 @@ public class ArrayList_0_Introduction {
     public static void main(String[] args) {
         Integer j = 10;
         Float f = 4.5F;
-        System.out.println(j);
+        System.out.println(j); 
         System.out.println(f);
         ArrayList<Integer> l1 = new ArrayList();
         l1.add(4);
