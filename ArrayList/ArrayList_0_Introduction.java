@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ArrayList_0_Introduction {
     public ArrayList_0_Introduction() {
-    }
+    } 
 
     public static void main(String[] args) {
         Integer j = 10;
