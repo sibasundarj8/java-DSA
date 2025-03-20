@@ -1,6 +1,6 @@
 package OOPS;
 
-
+ 
 import java.util.Scanner;
 
 public class O4_Fractions {
