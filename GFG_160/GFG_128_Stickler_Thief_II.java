@@ -16,7 +16,7 @@ package GFG_160;/*
  *      Output: 5
  *      Explanation: Maximum stolen value: arr[0] + arr[2] = 2 + 3 = 5 or
  *                   arr[2] + arr[4] = 3 + 2 = 5
- */
+ */ 
 import java.util.Scanner;
 
 public class GFG_128_Stickler_Thief_II {
