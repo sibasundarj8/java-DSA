@@ -12,7 +12,7 @@ public class Dynamic_Programming_Remove_Duplicates {
      static String removeDups(String str) {
         // potd.code.hub
          str = str.toLowerCase();
-        String ans = "";
+        String ans = ""; 
         int[]freq = new int[26];
         for (int i = 0;i < str.length();i++){
             int idx = (int) str.charAt(i)-97;
