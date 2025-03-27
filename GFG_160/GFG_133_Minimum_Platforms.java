@@ -17,8 +17,7 @@ package GFG_160;/*
  *      Explanation: There are three trains during the time 9:40 to 12:00. So we need a minimum of 3
  *                   platforms.
  */
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class GFG_133_Minimum_Platforms {
 
@@ -42,13 +41,56 @@ public class GFG_133_Minimum_Platforms {
     }
 
     /// Solution
+    
+/*************************************************************Use-Extra-space**************************************************************************/
+/// Time complexity: O(n log n)
+/// Space Complexity: O(n)
+    /*static int findPlatform(int[] arr, int[] dep) {
+        // potd.code.hub
+        int n = arr.length, ans = 0, count = 0;
+
+        List<Pair> temp = new LinkedList<>();
+        for (int i = 0;i < n;i++){
+            temp.add(new Pair(arr[i], 'a'));
+            temp.add(new Pair(dep[i], 'd'));
+        }
+
+        temp.sort((o1, o2) -> {
+            int x = o1.val - o2.val;
+            if (x != 0)
+                return x;
+            else return Integer.compare(o1.type, o2.type);
+        });
+
+        n = temp.size();
+        for (int i = 0;i < n;i++){
+            if (temp.get(i).type == 'a')
+                count++;
+            else count--;
+            ans = Math.max(ans, count);
+        }
+
+        return ans;
+    }
+    private static class Pair{
+        int val;
+        char type;
+        Pair (int val, char type){
+            this.val = val;
+            this.type = type;
+        }
+    }*/
+
+/****************************************************Space-Optimized_Using-two-pointer*******************************************************************/
+/// Time Complexity: O(n log n)
+/// Space Complexity: O(1)
     static int findPlatform(int[] arr, int[] dep) {
         // potd.code.hub
         int n = arr.length, ans = 0, count = 0;
 
         Arrays.sort(arr);
         Arrays.sort(dep);
-        
+
         int i = 0, j = 0;
         while (i < n){
             if (arr[i] <= dep[j]){
@@ -61,7 +103,7 @@ public class GFG_133_Minimum_Platforms {
                 j++;
             }
         }
-        
+
         return ans;
     }
 }
