@@ -57,5 +57,7 @@ public class GFG_138_DFS_of_Graph {
         for (int i : adj.get(node))
             if (!visited[i])
                 dfs(i, adj, visited, ans);
+            }
+        }
     }
 }
