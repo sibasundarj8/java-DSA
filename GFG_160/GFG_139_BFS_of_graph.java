@@ -3,7 +3,7 @@ package GFG_160;/*
  * https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1
  *
  * # BFS of graph
- * 
+ *
  *   Q. Given a connected undirected graph containing V vertices, represented by a 2-d adjacency list
  *      adj[][], where each adj[i] represents the list of vertices connected to vertex i. Perform a
  *      Breadth First Search (BFS) traversal starting from vertex 0, visit vertices from left to right
