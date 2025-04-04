@@ -59,10 +59,11 @@ public class Graph_Flood_fill_Algorithm {
         // potd.code.hub
         int n = image.length;
         int m = image[0].length;
+        int[][]ans = image.clone();
         boolean[][] visited = new boolean[n][m];
         bfs(image, visited, sr, sc, newColor);
-        
-        return image;
+
+        return ans;
     }
     private static class Pair{
         int r, c;
