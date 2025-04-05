@@ -24,7 +24,6 @@ package GFG_160;/*
  *
  *              1 -> 2 -> 0 -> 1 is a cycle.
  */
-
 import java.util.ArrayList;
 
 public class GFG_141_Undirected_Graph_Cycle {
