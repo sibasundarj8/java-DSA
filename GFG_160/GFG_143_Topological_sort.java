@@ -30,7 +30,7 @@ package GFG_160;/*
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class GFG_243_Topological_sort {
+public class GFG_143_Topological_sort {
 
     /// main Method
     public static void main(String[] args) {
