@@ -1,4 +1,4 @@
-package GFG_160;/* 
+package GFG_160;/*
  *
  * https://www.geeksforgeeks.org/problems/topological-sort/1
  *
