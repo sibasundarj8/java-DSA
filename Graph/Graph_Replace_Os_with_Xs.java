@@ -1,5 +1,5 @@
 package Graph;/*
- * 
+ *
  * https://www.geeksforgeeks.org/problems/replace-os-with-xs0052/1
  *
  * # Replace O's with X's
