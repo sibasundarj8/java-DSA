@@ -1,5 +1,5 @@
 package GFG_160;/*
- *
+ * 
  * https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
  *
  * # Directed Graph Cycle
