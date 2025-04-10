@@ -13,10 +13,10 @@ package GFG_160;/*
  *      of p.
  *   Ex.
  *      Input : n = 5
- *              houses[][] = [[ 0, 7],
- *                            [ 0, 9],
- *                            [20, 7],
- *                            [30, 7],
+ *              houses[][] = [[ 0,  7],
+ *                            [ 0,  9],
+ *                            [20,  7],
+ *                            [30,  7],
  *                            [40, 70]]
  *      Output: 105
  *      Explanation:
@@ -46,26 +46,27 @@ public class GFG_147_Minimum_cost_to_connect_all_houses_in_a_city {
     static int minCost(int[][] houses) {
         // potd.code.hub
         int n = houses.length;
-        PriorityQueue<Pair> q = new PriorityQueue<>((a, b) -> a.w - b.w);
-        boolean[] visited = new boolean[n];
+        PriorityQueue<Pair> q = new PriorityQueue<>((a, b) -> a.w - b.w);//v²
+        boolean[] visited = new boolean[n]; // v
 
         q.add(new Pair(0, 0));
         int sum = 0;
 
+        // v
         while (!q.isEmpty()){
             Pair p = q.poll();
             if (visited[p.v]) continue;
             visited[p.v] = true;
             sum += p.w;
-            for (int i = 0;i < n;i++){
+            for (int i = 0;i < n;i++){ // v
                 if (i == p.v) continue;
                 if (!visited[i]){
                     int wt = weight(houses[p.v], houses[i]);
-                    q.add(new Pair(i, wt));
+                    q.add(new Pair(i, wt)); // log(v²) => 2*log(v) => log(v)
                 }
             }
-        }
-
+        }// O(v².log(v))
+         // Number of edges * log(v) => Θ(v*(v-1)/2.log(v)).
         return sum;
     }
     private static int weight (int[]i, int[]j){
