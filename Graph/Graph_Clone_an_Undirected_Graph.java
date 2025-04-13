@@ -129,6 +129,8 @@ public class Graph_Clone_an_Undirected_Graph {
     /// Solution
     static Node cloneGraph(Node node) {
         // potd.code.hub
+        if (node == null) return null;
+        
         Queue<Node> q = new LinkedList<>();
         Queue<Node> ansQ = new LinkedList<>();
         HashMap<Integer, Node> visited = new HashMap<>();
