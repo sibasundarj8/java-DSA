@@ -28,7 +28,7 @@ package GFG_160;/*
  */
 import java.util.*;
 
-public class GFG_151_Clone_an_Undirected_Graph {
+public class GFG_150_Clone_an_Undirected_Graph {
 
     /// Structure
     static class Node{
