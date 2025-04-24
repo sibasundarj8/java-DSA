@@ -45,17 +45,12 @@ public class GFG_160_Unique_Number_II {
         }
 
         // getting RMSB (right most significant bit) of the xor of two non repeating element.
-        int pos = 0;
-        for (; pos <= 31; pos++) {
-            if ((xor & (1 << pos)) != 0) {
-                break;
-            }
-        }
+        xor &= -xor;
 
         // separating in 2 groups on the basis of RMSB
         int xorA = 0, xorB = 0;
         for (int i : arr) {
-            if ((i & (1 << pos)) == 0) {
+            if ((i & xor) == 0) {
                 xorA ^= i;
             } else {
                 xorB ^= i;
