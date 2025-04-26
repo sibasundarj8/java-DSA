@@ -59,8 +59,7 @@ public class GFG_153_Floyd_Warshall {
         for (int via = 0;via < n;via++){
             for (int u = 0;u < n;u++){
                 for (int v = 0;v < n;v++){
-                    if (u == v || u == via || v == via || 
-                        dist[u][via] == 1e8 || dist[via][v] == 1e8){
+                    if (u == v || u == via || v == via || dist[u][via] == 1e8 || dist[via][v] == 1e8){
                         continue;
                     }
                     dist[u][v] = Math.min(dist[u][v], dist[u][via] + dist[via][v]);
