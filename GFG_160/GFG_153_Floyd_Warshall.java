@@ -35,11 +35,11 @@ public class GFG_153_Floyd_Warshall {
 
     /// main Method
     public static void main(String[] args) {
-        int[][] dist = {{0, 4, 10⁸, 5, 10⁸},
-                        {10⁸, 0, 1, 10⁸, 6},
-                        {2, 10⁸, 0, 3, 10⁸},
-                        {10⁸, 10⁸, 1, 0, 2},
-                        {1, 10⁸, 10⁸, 4, 0}};
+        int[][] dist = {{0, 4, (int)1e8, 5, (int)1e8},
+                        {(int)1e8, 0, 1, (int)1e8, 6},
+                        {2, (int)1e8, 0, 3, (int)1e8},
+                        {(int)1e8, (int)1e8, 1, 0, 2},
+                        {1, (int)1e8, (int)1e8, 4, 0}};
 
         floydWarshall(dist);
 
