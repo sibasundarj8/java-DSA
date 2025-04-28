@@ -7,7 +7,7 @@ package Tree;/*
  *      subset of nodes such that the sum of their values is maximized, with the condition that
  *      no two selected nodes are directly connected that is, if a node is included in the
  *      subset, neither its parent nor its children can be included.
- *
+ * 
  *    Ex.
  *          Input : root[] = [1, 2, 3, 4, N, 5, 6]
  *                            (1)                         (✅)      
