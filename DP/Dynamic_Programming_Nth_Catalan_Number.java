@@ -1,4 +1,4 @@
-package DP;/* 
+package DP;/*
  *
  * https://www.geeksforgeeks.org/problems/nth-catalan-number0817/1
  *
@@ -30,10 +30,13 @@ public class Dynamic_Programming_Nth_Catalan_Number {
         System.out.println("Number of parenthesis: ");
         int n = sc.nextInt();
 
-        System.out.println("Combinations: " + findCatalan(n));
+        System.out.println("Combinations: " + findCatalan1(n));
     }
 
     /// Solution
+/**************************************************Dynamic-Programming**************************************************/
+// TC : O(n)
+// SC : O(n)
     static int findCatalan(int n) {
         // potd.code.hub
         if (n == 0 || n == 1) return 1;
@@ -48,5 +51,19 @@ public class Dynamic_Programming_Nth_Catalan_Number {
         }
 
         return dp[n];
+    }
+/*************************************************Binomial-Coefficient**************************************************/
+// TC : O(n)
+// SC : O(1)
+    static int findCatalan1(int n) {
+        // potd.code.hub
+        long res = 1;
+
+        for (int i = 0; i < n; ++i) {
+            res *= (2L * n - i);
+            res /= (i + 1);
+        }
+
+        return (int)(res / (n + 1));
     }
 }
