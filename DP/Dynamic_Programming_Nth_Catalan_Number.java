@@ -35,7 +35,7 @@ public class Dynamic_Programming_Nth_Catalan_Number {
 
     /// Solution
 /**************************************************Dynamic-Programming**************************************************/
-// TC : O(n)
+// TC : O(n²)
 // SC : O(n)
     static int findCatalan(int n) {
         // potd.code.hub
