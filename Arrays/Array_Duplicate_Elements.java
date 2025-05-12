@@ -7,7 +7,7 @@ package Array;/*
  *       Note: Try and perform all operations within the provided array. The extra (non-constant)
  *            space needs to be used only for the array to be returned.
  *
- *       Examples:
+ *       Examples: 
  *              Input : arr[] = {0,3,1,2}, n = 4
  *              Output: -1
  *         Explanation: There is no repeating element in the array. Therefore, output is -1.
