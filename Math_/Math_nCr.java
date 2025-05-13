@@ -1,5 +1,5 @@
 package Math_;/*
- *
+ * 
  * https://www.geeksforgeeks.org/problems/ncr1019/1
  *
  * # nCr
