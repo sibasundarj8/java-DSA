@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
-public class month_name
-{
+public class month_name{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        
         System.out.println("enter your birth month number : ");
         int buttons = sc.nextInt();
+        
         switch (buttons) {
             case 1 -> System.out.println("January");
             case 2 -> System.out.println("February");
