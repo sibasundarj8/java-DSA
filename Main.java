@@ -7,7 +7,7 @@ public class Main {
     }
     static int sum (int...a){
         int ans = 0;
-        for (int j : a) ans += j;
+        for (int j : a) ans += j;   
 
         return ans;
     }
