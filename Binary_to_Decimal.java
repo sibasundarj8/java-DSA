@@ -7,7 +7,7 @@ public class Binary_to_Decimal
         Scanner sc = new Scanner(System.in);
 
         int pw = 1;
-        int ans = 0;
+        int ans = 0;   
 
         for(long n = sc.nextInt(); n > 0L; n /= 10L)
         {
