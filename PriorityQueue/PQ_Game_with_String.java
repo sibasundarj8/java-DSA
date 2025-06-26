@@ -15,8 +15,8 @@ package Priority_Queue;/*
  *      Output: 6
  *      Explanation: We remove two 'c' to get the value as 12 + 22 + 12 = 6, or We remove one 'b' and one 'c' to
  *                   get the value 12 + 12 + 22 = 6.
- */
-
+ */  
+    
 import java.util.HashMap;
 import java.util.PriorityQueue;
 import java.util.Scanner;
