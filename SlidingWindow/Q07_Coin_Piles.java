@@ -22,7 +22,7 @@ package Sliding_Window;/*
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Q7_Coin_Piles {
+public class Q07_Coin_Piles {
 
     /// main Method
     public static void main(String[] args) {
