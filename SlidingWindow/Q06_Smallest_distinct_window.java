@@ -16,7 +16,7 @@ package Sliding_Window;/*
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Q6_Smallest_distinct_window {
+public class Q06_Smallest_distinct_window {
 
     /// main Method
     public static void main(String[] args) {
