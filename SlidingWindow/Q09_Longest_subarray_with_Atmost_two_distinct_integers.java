@@ -16,7 +16,7 @@ package Sliding_Window;/*
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class Q9_Longest_subarray_with_Atmost_two_distinct_integers {
+public class Q09_Longest_subarray_with_Atmost_two_distinct_integers {
 
     /// main Method
     public static void main(String[] args) {
