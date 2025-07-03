@@ -18,7 +18,7 @@ package Sliding_Window;/*
  */
 import java.util.Scanner;
 
-public class Q8_Substrings_of_length_k_with_k1_distinct_elements {
+public class Q08_Substrings_of_length_k_with_k1_distinct_elements {
 
     /// main Method
     public static void main(String[] args) {
