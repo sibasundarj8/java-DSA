@@ -2,6 +2,7 @@ package Array;
 
 import java.util.Scanner;
 
+// potd.code.hub
 public class Array_3_Pointers_Approach {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
