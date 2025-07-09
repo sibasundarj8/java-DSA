@@ -23,7 +23,7 @@ package Stack;/*
 import java.util.Scanner;
 import java.util.Stack;
 
-public class S7_Remove_the_balls {
+public class S07_Remove_the_balls {
 
     /// main Method
     public static void main(String[] args) {
