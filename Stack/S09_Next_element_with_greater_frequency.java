@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class S9_Next_element_with_greater_frequency {
+public class S09_Next_element_with_greater_frequency {
 
     /// main Method
     public static void main(String[] args) {
