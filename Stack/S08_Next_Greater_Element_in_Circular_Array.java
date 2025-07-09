@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class S8_Next_Greater_Element_in_Circular_Array {
+public class S08_Next_Greater_Element_in_Circular_Array {
 
     /// main Method
     public static void main(String[] args) {
