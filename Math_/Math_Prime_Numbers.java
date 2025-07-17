@@ -14,7 +14,7 @@ package Math_;/*
  */
 import java.util.Scanner;
 
-public class Prime_Numbers {
+public class Math_Prime_Numbers {
 
     /// main Method
     public static void main(String[] args) {
