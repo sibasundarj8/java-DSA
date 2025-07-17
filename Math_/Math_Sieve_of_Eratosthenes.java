@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Sieve_of_Eratosthenes {
+public class Math_Sieve_of_Eratosthenes {
 
     /// main Method
     public static void main(String[] args) {
