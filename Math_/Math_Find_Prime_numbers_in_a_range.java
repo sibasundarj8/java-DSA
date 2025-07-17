@@ -14,7 +14,7 @@ package Math_;/*
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Find_Prime_numbers_in_a_range {
+public class Math_Find_Prime_numbers_in_a_range {
 
     /// main Method
     public static void main(String[] args) {
