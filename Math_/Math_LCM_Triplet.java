@@ -12,7 +12,7 @@ package Math_;/*
  *      Output: 504
  *      Explanation: 504 is the maximum LCM that can be attained by any triplet of numbers less than or equal 9.
  *                   The triplet which has this LCM is {7, 8, 9}.
- */
+ */    
 
 import java.util.Scanner;
 
