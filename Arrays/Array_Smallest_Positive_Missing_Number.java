@@ -12,49 +12,48 @@ package Array;/*
  *      Output: 1
  *      Explanation: Smallest positive missing number is 1.
  */
+
 import java.util.Scanner;
 
 public class Array_Smallest_Positive_Missing_Number {
 
-  /// main Method
+    /// main Method
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Size: ");
         int n = sc.nextInt();
 
-        int[]arr = new int[n];
+        int[] arr = new int[n];
 
         System.out.println("Elements: ");
-        for (int i = 0;i < n;i++){
+        for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
 
         System.out.println(missingNumber(arr));
     }
 
-  /// Solution
-    static int missingNumber(int[]arr) {
+    /// Solution
+    static int missingNumber(int[] arr) {
         // potd.code.hub
         int n = arr.length;
+      
         // Arranging the elements on the basis of index.
-        for (int i = n-1;i >= 0;i--){
-            int ele = arr[i];
-            if (ele > 0 && ele < n && arr[i] != arr[ele]){
-                int temp = arr[i];
-                arr[i] = arr[ele];
-                arr[ele] = temp;
-                i++;
+        for (int i = 0; i < n; i++) {
+            int cur = arr[i];
+            if (cur > 0 && cur <= n && cur - 1 != i && cur != arr[cur - 1]) {
+                arr[i] = arr[cur - 1];
+                arr[cur - 1] = cur;
+                i--;
             }
         }
+      
         // searching the missing element on the basis of index
-        for (int i = 1;i < n;i++){
-            if (arr[i] != i){
-                return i;
-            }
-        }
-        if (arr[0] != n)return n;
+        for (int i = 0; i < n; i++)
+            if (arr[i] != i + 1) return i + 1;
 
-        return n+1;
+        // if not missing any number then last number must be the answer.
+        return n + 1;
     }
 }
