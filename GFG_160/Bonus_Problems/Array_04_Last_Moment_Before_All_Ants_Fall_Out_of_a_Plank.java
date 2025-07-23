@@ -37,12 +37,11 @@ public class Array_04_Last_Moment_Before_All_Ants_Fall_Out_of_a_Plank {
         int ans = 0;
 
         for (int i = 0;i < m1 || i < m2;i++){
-            int t1 = 0;
-            int t2 = 0;
-            if (i < m1) t1 = left[i];
-            if (i < m2) t2 = n - right[i];
+            int t1 = (i < m1) ? left[i] : 0;
+            int t2 = (i < m2) ? n - right[i] : 0;
             ans = Math.max(ans, Math.max(t1, t2));
         }
+        
         return ans;
     }
 }
