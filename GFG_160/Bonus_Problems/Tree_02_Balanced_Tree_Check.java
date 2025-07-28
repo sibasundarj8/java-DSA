@@ -17,7 +17,7 @@ package GFG_160.Bonus_Problems;/*
  *      Output: true
  *      Explanation: The height difference between the left and right subtrees at all nodes is at most 1.
  *                   Hence, the tree is balanced.
- */
+ */     
 
 public class Tree_02_Balanced_Tree_Check {
 
