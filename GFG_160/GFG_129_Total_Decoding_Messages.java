@@ -1,7 +1,7 @@
 package GFG_160;/*
  *
  * https://www.geeksforgeeks.org/problems/total-decoding-messages1235/1
- *
+ *   
  * # Total Decoding Messages
  *
  *   Q. A message containing letters A-Z is being encoded to numbers using the following mapping:
