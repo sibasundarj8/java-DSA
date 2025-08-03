@@ -25,7 +25,7 @@ package Tree;/*
 
 import java.util.*;
 
-public class T11_Array_to_BST {
+public class Tree_Array_to_BST {
 
     ///  Structure
     private static class Node {
