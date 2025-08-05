@@ -44,10 +44,10 @@ public class Hashing_01_Roman_Number_to_Integer {
         map.put('D', 500);
         map.put('M', 1000);
 
-        for (int i = 0;i < n;i++){
+        for (int i = 0; i < n; i++) {
             int curr = map.get(s.charAt(i));
-            int next = (i < n-1) ? map.get(s.charAt(i+1)) : 0;
-            ans += (next <= curr) ? curr : next - curr + i - i++;
+            int next = (i < n - 1) ? map.get(s.charAt(i + 1)) : 0;
+            ans += (next > curr) ? -curr : curr;
         }
 
         return ans;
