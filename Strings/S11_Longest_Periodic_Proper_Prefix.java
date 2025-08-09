@@ -15,7 +15,7 @@ package Strings;/*
  *      Explanation: Repeating the proper prefix "abc" forms "abcabc., which contains "abcab" as a prefix.
  *                   No longer proper prefix satisfies this.
  */
-
+  
 import java.util.Scanner;
 
 public class S11_Longest_Periodic_Proper_Prefix {
@@ -33,6 +33,7 @@ public class S11_Longest_Periodic_Proper_Prefix {
     /// Solution
 /*------------------------------------------------------- K M P - algo --------------------------------------------------*/
     public static int getLongestPrefix(String s) {
+        // potd.code.hub
         int n = s.length();
         int[] lps = lps(s);
         int prefix = lps[n - 1]; // longest prefix
