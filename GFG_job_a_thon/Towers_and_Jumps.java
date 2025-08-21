@@ -14,7 +14,7 @@ package GFG_job_a_thon;/*
  *      jumps, and no one can move beyond the last tower.
  *
  *      You are also given a query array q[]. For each query q[i], determine how many people can reach a tower
- *      with height at least q[i].
+ *      with height at least q[i].   
  *
  *   Ex.
  *      Input : heights[] = [2, 4, 3, 5]
