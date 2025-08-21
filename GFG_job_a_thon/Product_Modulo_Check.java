@@ -2,7 +2,7 @@ package GFG_job_a_thon;/*
  *
  * https://practice.geeksforgeeks.org/contest/job-a-thon-46-hiring-challenge/problems
  *
- * # Math Product Modulo Check (job-a-thon)
+ * # Math Product Modulo Check (job-a-thon)  
  *
  *   Q. You are given an array of integers arr[] and an integer y.
  *      Your task is to determine whether there exist three distinct indices i, j, and k such that:
