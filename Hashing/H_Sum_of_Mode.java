@@ -6,7 +6,7 @@ package Hashing;/*
  *
  *   Q. Given an array arr[] of positive integers and an integer k. You have to find the sum of the modes of all
  *      the subarrays of size k.
- *
+ *  
  *      Note: The mode of a subarray is the element that occurs with the highest frequency. If multiple elements
  *            have the same highest frequency, the smallest such element is considered the mode.
  *   Ex.
