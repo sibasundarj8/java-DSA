@@ -89,7 +89,7 @@ public class LeetCode_3495_Minimum_Operations_to_Make_Array_Elements_Zero {
         }
 
         // answer of last box
-        ans += ((n + 1) * ((r - start) + 1));
+        ans += ((n + 1) * ((r - start * 4) + 1));
 
         return (ans + 1) / 2;
     }
