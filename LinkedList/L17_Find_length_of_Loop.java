@@ -18,13 +18,15 @@ package LinkedList;/*
  *          Explanation: There exists a loop in the linked list and the length of the loop is 4.
  *
  */
+
 public class L17_Find_length_of_Loop {
 
     /// Structure
     private static class Node {
         int data;
         Node next;
-        Node (int data){
+
+        Node(int data) {
             this.data = data;
         }
     }
@@ -32,40 +34,45 @@ public class L17_Find_length_of_Loop {
     /// main Method
     public static void main(String[] args) {
         Node[] nodes = {new Node(1),
-                        new Node(2),
-                        new Node(3),
-                        new Node(4),
-                        new Node(5)};
+                new Node(2),
+                new Node(3),
+                new Node(4),
+                new Node(5)};
         nodes[0].next = nodes[1];
         nodes[1].next = nodes[2];
         nodes[2].next = nodes[3];
         nodes[3].next = nodes[4];
         nodes[4].next = nodes[1];
 
-        System.out.println("Number of cycle nodes: " + countNodesinLoop(nodes[0]));
+        System.out.println("Number of cycle nodes: " + lengthOfLoop(nodes[0]));
     }
 
     /// Solution
-    static int countNodesinLoop(Node head) {
+    static int lengthOfLoop(Node head) {
         // potd.code.hub
         int count = 0;
 
         Node slow = head;
         Node fast = head;
 
-        while (fast != null && fast.next != null){
+        // finding the loop
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
 
-            if (slow == fast){
+            if (slow == fast) {
                 count = 1;
-                while (slow.next != fast){
+
+                // ccounting the length of loop
+                while (slow.next != fast) {
                     count++;
                     slow = slow.next;
                 }
+
                 break;
             }
         }
+
         return count;
     }
 }
