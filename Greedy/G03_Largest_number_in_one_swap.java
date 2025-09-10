@@ -36,7 +36,10 @@ public class G03_Largest_number_in_one_swap {
         TreeMap<Character, Integer> map = new TreeMap<>((a, b) -> b - a);
 
         // adding the right most position of each digit to treemap
-        for (int i = n - 1; i >= 0; i--) map.putIfAbsent(chars[i], i);
+        for (int i = n - 1; i >= 0; i--) {
+            map.putIfAbsent(chars[i], i);
+            if(map.size() == 10) break;
+        }
 
         // checking for left-most smaller element as compare to the right-most largest element 
         for (int i = 0; i < n; i++) {
