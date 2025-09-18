@@ -3,7 +3,7 @@ package ArrayLists;
 import java.util.ArrayList;
 
 public class ArrayList_0_Introduction {
-    public ArrayList_0_Introduction() {
+    public ArrayList_0_Introduction() {     
     } 
 
     public static void main(String[] args) {
@@ -44,3 +44,4 @@ public class ArrayList_0_Introduction {
         System.out.println(l2);
     }
 }
+
