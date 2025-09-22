@@ -10,7 +10,7 @@ package Stack;/*
  *      For each window size k, consider all contiguous subarrays of length k, determine the minimum element
  *      in each subarray, and then take the maximum among all these minimums.
  *
- *      Return the results as an array, where the element at index 'i' represents the answer for window size
+ *      Return the results as an array, where the element at index 'i' represents the answer for window size  
  *      i+1.
  *   Ex.
  *      Input : arr[] = [10, 20, 30, 50, 10, 70, 30]
