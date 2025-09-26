@@ -32,7 +32,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class LeetCode_Code_2780_Minimum_Index_of_a_Valid_Split {
+public class LeetCode_2780_Minimum_Index_of_a_Valid_Split {
 
     /// main method
     public static void main(String[] args) {
