@@ -28,7 +28,7 @@ package LeetCode;/*
  *                                                  8   2   6
  *                                                   \ / \ /
  *                                                    0   8
- *                                                     \ /
+ *                                                     \ /  
  *                                                      8
  *      Explanation: The above diagram depicts the process from which we obtain the
  *                   triangular sum of the array.
