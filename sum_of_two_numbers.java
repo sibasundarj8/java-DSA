@@ -17,5 +17,3 @@ public class sum_of_two_numbers
         System.out.println("a + b = " + sum);
     }
 }
-
-       
