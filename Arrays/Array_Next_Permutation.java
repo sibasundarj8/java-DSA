@@ -19,7 +19,7 @@ package Array;/*
  *          1 ≤ arr.size() ≤ 10⁵
  *          0 ≤ arr[i] ≤ 10⁵
  */
-
+  
 import java.util.Arrays;
 import java.util.Scanner;
 
