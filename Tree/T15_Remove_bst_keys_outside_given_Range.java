@@ -1,8 +1,10 @@
-/*
+package Tree;/*
 [medium]
 problem link - https://practice.geeksforgeeks.org/problems/remove-bst-keys-outside-given-range/1
 */
 class Solution {
+
+    /// Solution
     Node removekeys(Node cur, int l, int r) {
         // base case
         if (cur == null) return null;
