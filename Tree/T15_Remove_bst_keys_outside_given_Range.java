@@ -5,7 +5,7 @@ problem link - https://practice.geeksforgeeks.org/problems/remove-bst-keys-outsi
 public class T15_Remove_bst_keys_outside_given_Range { 
 
     /// Solution
-    Node removekeys(Node cur, int l, int r) {
+    static Node removekeys(Node cur, int l, int r) {
         // base case
         if (cur == null) return null;
         
