@@ -26,6 +26,9 @@ package Graph;/*
  */
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Graph_Replace_Os_with_Xs {
 
@@ -46,6 +49,7 @@ public class Graph_Replace_Os_with_Xs {
     }
 
     /// Solution
+/*.......................................................using-DFS.......................................................*/
     static char[][] fill(char[][]mat) {
         // potd.code.hub
         int n = mat.length, m = mat[0].length;
@@ -84,6 +88,49 @@ public class Graph_Replace_Os_with_Xs {
             if (0 <= nRow && nRow < n && 0 <= nCol && nCol < m &&
                 mat[nRow][nCol] == 'O' && ans[nRow][nCol] == 'X'){
                 dfs(nRow, nCol, mat, ans, dRow, dCol, n, m);
+            }
+        }
+    }
+
+/*.......................................................using-BFS.......................................................*/
+    static void fillBfs(char[][] grid) {
+        // potd.code.hub
+        int n = grid.length;
+        int m = grid[0].length;
+
+        Queue<int[]> queue = new LinkedList<>();
+        int[] row = {0, -1, 0, 1};
+        int[] col = {-1, 0, 1, 0};
+
+        for (int i = 0; i < m; i++) {
+            if (grid[0][i] == 'O') queue.add(new int[]{0, i});
+            if (grid[n - 1][i] == 'O') queue.add(new int[]{n - 1, i});
+        }
+        for (int i = 0; i < n; i++) {
+            if (grid[i][0] == 'O') queue.add(new int[]{i, 0});
+            if (grid[i][m - 1] == 'O') queue.add(new int[]{i, m - 1});
+        }
+
+        // marking the O's which are connected with boundary.
+        while (!queue.isEmpty()) {
+            int[] curr = queue.poll();
+            grid[curr[0]][curr[1]] = '$';
+            
+            // four directions
+            for (int i = 0; i < 4; i++) {
+                int nr = curr[0] + row[i];
+                int nc = curr[1] + col[i];
+                
+                if (0 <= nr && nr < n && 0 <= nc && nc < m && grid[nr][nc] == 'O') 
+                    queue.add(new int[]{nr, nc});
+            }
+        }
+
+        // updating 'O' which are not connected with boundary.
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (grid[i][j] == '$') grid[i][j] = 'O';
+                else if (grid[i][j] == 'O') grid[i][j] = 'X';
             }
         }
     }
