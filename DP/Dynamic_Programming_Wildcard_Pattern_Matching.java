@@ -42,8 +42,8 @@ public class Dynamic_Programming_Wildcard_Pattern_Matching {
     /// Solution
     static boolean wildCard(String txt, String pat) {
         // potd.code.hub
-        int n = txt.length() - 1;
-        int m = pat.length() - 1;
+        int n = txt.length();
+        int m = pat.length();
         Boolean[][] dp = new Boolean[n][m];
 
         return f(0, 0, n, m, txt, pat, dp);
