@@ -53,7 +53,7 @@ public class Dynamic_Programming_Minimum_Cost_to_Cut_a_Stick_of_length_N {
 TC : O(m³)
 SC : O(m²)
 */
-    public static int minCutCost(int n, int[] cuts) {
+    static int minCutCost(int n, int[] cuts) {
         // potd.code.hub
         int m = cuts.length;
         int[] arr = new int[m + 2];
@@ -69,8 +69,7 @@ SC : O(m²)
 
     // helper method
     private static int f(int i, int j, int[] arr, int[][] dp) {
-        // base case
-        if(i > j) return 0;
+        // base case -> no need to add (i > j) case here because I handled that before the recursive call, in for loop.
         if(dp[i][j] != -1) return dp[i][j];
 
         // recursive case
