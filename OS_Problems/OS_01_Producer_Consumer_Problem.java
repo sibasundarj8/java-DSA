@@ -1,109 +1,124 @@
 package OS_Problems;
 
+import java.util.Scanner;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.ThreadLocalRandom;
 
-public class OS_02_Reader_Writer_Problem {
+public class OS_01_Producer_Consumer_Problem {
 
     /// main Method
     public static void main(String[] args) {
-        Document doc = new Document();
+        Scanner sc = new Scanner(System.in);
 
-        Thread t1 = new Thread(() -> {
-            for (int i = 1; i <= 5; i++)
-                new Reader(i, doc).start();
-        });
+        System.out.println("Size of buffer");
+        int size = sc.nextInt();
 
-        Thread t2 = new Thread(() -> {
-            for (int i = 10; i <= 13; i++)
-                new Writer(i, doc).start();
-        });
+        Buffer buffer = new Buffer(size);
+        Producer producer = new Producer(buffer);
+        Consumer consumer = new Consumer(buffer);
 
-        t1.start();
-        t2.start();
-    }
-}
+        Thread producerThread = new Thread(producer);
+        Thread consumerThread = new Thread(consumer);
 
-// Reader which is going to read the document.
-class Reader extends Thread {
-    private final Document document;
-    private final int id;
+        producerThread.start();
+        consumerThread.start();
 
-    public Reader(int id, Document document) {
-        this.id = id;
-        this.document = document;
-    }
-
-    public void run() {
         try {
-            document.startRead(id);
-            Thread.sleep(200);
-            document.endRead(id);
-            Thread.sleep(200);
+            Thread.sleep(3000);
+            consumerThread.interrupt();
+            producerThread.interrupt();
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
         }
     }
 }
 
-// Writer which is going to write on the document. (only one allowed at a time)
-class Writer extends Thread {
-    private final Document document;
-    private final int id;
+// producer which produces item.
+class Producer extends Thread {
+    private final Buffer buffer;
 
-    public Writer(int id, Document document) {
-        this.id = id;
-        this.document = document;
+    public Producer(Buffer buffer) {
+        this.buffer = buffer;
     }
 
     public void run() {
-        try {
-            document.startWrite(id);
-            Thread.sleep(500);
-            document.endWrite(id);
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            System.out.println(e.getMessage());
+        while(true) {
+            try {
+                buffer.produce();
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                System.out.println(e.getMessage());
+                break;
+            }
         }
     }
 }
 
-// Document in which multiple reader or single writer can perform operation synchronously.
-class Document {
-    private final Semaphore wrt;
+// consumer which consumes item
+class Consumer extends Thread {
+    private final Buffer buffer;
+
+    public Consumer(Buffer buffer) {
+        this.buffer = buffer;
+    }
+
+    public void run() {
+        while (true){
+            try {
+                buffer.consume();
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                System.out.println(e.getMessage());
+                break;
+            }
+        }
+    }
+}
+
+// buffer in which we produce and consume item synchronously.
+class Buffer {
+    private int in;
+    private int out;
+    private final int capacity;
+    private final int[] buffer;
     private final Semaphore mutex;
-    private int readerCount;
+    private final Semaphore full;
+    private final Semaphore empty;
 
-    public Document() {
-        this.wrt = new Semaphore(1);    // used to allow only a single writer.
-        this.mutex = new Semaphore(1);  // used to keep readerCount thread-safe.
-        this.readerCount = 0;
+    public Buffer(int size) {
+        in = 0;
+        out = 0;
+        capacity = size;
+        buffer = new int[size];
+        mutex = new Semaphore(1);
+        full = new Semaphore(0);
+        empty = new Semaphore(size);
     }
 
-    public void startWrite(int id) throws InterruptedException {
-        wrt.acquire();
-        System.out.println("[Thread-" + id + "] : Start Writing ## ");
-    }
+    void produce() throws InterruptedException {
+        int item = ThreadLocalRandom.current().nextInt(1, 100);
 
-    public void endWrite(int id) throws InterruptedException {
-        System.out.println("[Thread-" + id + "] : Stop Writing !! ");
-        wrt.release();
-    }
-
-    public void startRead(int id) throws InterruptedException {
+        empty.acquire();
         mutex.acquire();
-        readerCount++;
-        if (readerCount == 1) wrt.acquire();
-        mutex.release();
 
-        System.out.println("[Thread-" + id + "] : Start Reading ## ");
+        buffer[in] = item;
+        System.out.println("[Producer]: " + item);
+        in = (in + 1) % capacity;
+
+        mutex.release();
+        full.release();
     }
 
-    public void endRead(int id) throws InterruptedException {
-        System.out.println("[Thread-" + id + "] : End Reading !! ");
-
+    void consume() throws InterruptedException{
+        full.acquire();
         mutex.acquire();
-        readerCount--;
-        if (readerCount == 0) wrt.release();
+
+        int item = buffer[out];
+        buffer[out] = 0;
+        System.out.println("[Consumer]: " + item);
+        out = (out + 1) % capacity;
+
         mutex.release();
+        empty.release();
     }
 }
