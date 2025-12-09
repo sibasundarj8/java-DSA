@@ -1,18 +1,26 @@
 package Array;/*
- *      Q. Given an array arr of size n which contains elements in range from 0 to n-1,
- *         you need to find all the elements occurring more than once in the given array.
- *         Return the answer in ascending order. If no such element is found, return list
- *         containing [-1].
  *
- *       Note: Try and perform all operations within the provided array. The extra (non-constant)
- *            space needs to be used only for the array to be returned.
+ * https://www.geeksforgeeks.org/problems/find-duplicates-in-an-array/1
  *
- *       Examples: 
- *              Input : arr[] = {0,3,1,2}, n = 4
- *              Output: -1
- *         Explanation: There is no repeating element in the array. Therefore, output is -1.
+ * # Array Duplicates
+ *
+ *   Q. Given an array arr[] of size n, containing elements from the range 1 to n, and each element appears at most twice,
+ *      return an array of all the integers that appears twice.
+ *
+ *      Note: You can return the elements in any order but the driver code will print them in sorted order.
+ *
+ *    Ex.
+ *      Input : arr[] = [2, 3, 1, 2, 3]
+ *      Output: [2, 3]
+ *      Explanation: 2 and 3 occur more than once in the given array.
+ *
+ *  Constraints:
+ *          1 ≤ n ≤ 10⁶
+ *          1 ≤ arr[i] ≤ n
  */
+
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Array_Duplicate_Elements {
@@ -28,21 +36,100 @@ public class Array_Duplicate_Elements {
         for (int i = 0;i < n;i++)
             arr[i] = sc.nextInt();
 
-        System.out.println(duplicates(arr));
+        System.out.println(findDuplicates(arr));
     }
-    static ArrayList<Integer> duplicates(int[] arr) {
-        // code here
-        int n = arr.length;
-        ArrayList<Integer> ans = new ArrayList<>();
-        for(int i = 0;i < n;i++){
-            int idx = arr[i]%n;
-            arr[idx] += n;
-        }
-        for(int i = 0;i < n;i++)
-            if(arr[i]/n > 1)
-                ans.add(i);
 
-        if (ans.isEmpty())ans.add(-1);
-        return ans;
+    /// Solution
+/*
+⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷-brute-force-⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷
+TC : O(n²)
+SC : O(1)
+*/
+    static ArrayList<Integer> bruteForce(int[] arr) {
+        // potd.code.hub
+        int n = arr.length;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] == arr[j]) {
+                    list.add(arr[i]);
+                    break;
+                }
+            }
+        }
+
+        return list;
+    }
+
+/*
+⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷-Hash-Set-⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷
+TC : O(n)
+SC : O(n)
+*/
+    static ArrayList<Integer> hashSet(int[] arr) {
+        // potd.code.hub
+        ArrayList<Integer> list = new ArrayList<>();
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int val : arr) {
+            if (set.contains(val)) list.add(val);
+            set.add(val);
+        }
+
+        return list;
+    }
+
+/*
+⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷-Cycle-sort-⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷
+TC : O(~n)
+SC : O(1)
+*/
+    static ArrayList<Integer> cycleSort(int[] arr) {
+        // potd.code.hub
+        int n = arr.length;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+
+            while (arr[i] != -1 && arr[i] - 1 != i) {
+                int idx = arr[i] - 1;
+
+                int temp = arr[i];
+                arr[i] = arr[idx];
+                arr[idx] = temp;
+
+                if (arr[i] == arr[idx]) {
+                    list.add(arr[i]);
+                    arr[i] = -1;
+                    arr[idx] = -1;
+                    break;
+                }
+            }
+
+        }
+
+        return list;
+    }
+
+/*
+⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷-Negative-Marking-⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷⩷
+TC : O(n)
+SC : O(1)
+*/
+    static ArrayList<Integer> findDuplicates(int[] arr) {
+        // potd.code.hub
+        int n = arr.length;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            int value = Math.abs(arr[i]);
+            int index = value - 1;
+
+            if (arr[index] < 0) list.add(value);
+            arr[index] *= -1;
+        }
+
+        return list;
     }
 }
