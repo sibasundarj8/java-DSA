@@ -41,7 +41,7 @@ public class Math_Construct_an_array_from_its_pair_sum_array {
         System.out.println("Original array of this pair sum array: ");
         System.out.println(constructArr(arr));
     }
- 
+    
     /// Solution
     static ArrayList<Integer> constructArr(int[] arr) {
         // potd.code.hub
