@@ -37,7 +37,7 @@ public class Q07_Count_Indices_to_Balance_Even_and_Odd_Sums {
     }
 
     /// Solution
-    static int cntWays(int... arr) {
+    static int cntWays(int[] arr) {
         int n = arr.length;
         int count = 0;
         int[] total = {0, 0};    // 0th index -> even sum
