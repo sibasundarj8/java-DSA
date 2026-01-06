@@ -15,6 +15,7 @@ package GFG_160;/*
  *              Window 3 of size k = 4 is 1 3 4 2. Number of distinct elements in this window are 4.
  *              Window 4 of size k = 4 is 3 4 2 3. Number of distinct elements in this window are 3.
  */
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -39,23 +40,25 @@ public class GFG_57_Count_distinct_elements_in_every_window {
     }
 
     /// Solution
-    static ArrayList<Integer> countDistinct(int[]arr, int k) {
-        // potd.code.hub
-        int n = arr.length, i = 0, j = 0;
-        HashMap<Integer, Integer> map = new HashMap<>(k);
-        ArrayList<Integer> ans = new ArrayList<>(n);
+    static ArrayList<Integer> countDistinct(int arr[], int k) {
+        int n = arr.length;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        ArrayList<Integer> list = new ArrayList<>();
 
-        while (j < n){
-            if (j >= k){
-                ans.add(map.size());
-                if (map.get(arr[i]) <= 1) map.remove(arr[i]);
-                else map.put(arr[i], map.get(arr[i])-1);
-                i++;
-            }
-            map.put(arr[j], map.getOrDefault(arr[j++], 0)+1);
+        for(int i = 0; i < k; i++) {
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
         }
-        ans.add(map.size());
 
-        return ans;
+        list.add(map.size());
+
+        for(int i = k; i < n; i++) {
+            map.put(arr[i-k], map.get(arr[i-k]) - 1);
+            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+
+            if(map.get(arr[i-k]) < 1) map.remove(arr[i-k]);
+            list.add(map.size());
+        }
+
+        return list;
     }
 }
