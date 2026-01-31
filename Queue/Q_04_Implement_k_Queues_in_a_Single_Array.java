@@ -132,14 +132,16 @@ class kQueues {
     }
 
     // private method to check if a valid queue request or not.
-    private boolean isValidQueueRequest(int q) {
-        return 0 <= q && q < this.k;
+    private void validateQueue(int q) {
+        if (q < 0 || k <= q) throw new IllegalArgumentException("Invalid queue index");
     }
 
     // enqueue element x into queue number 'q'
     public void enqueue(int x, int q) {
+        validateQueue(q);
+
         // return is array is full means no free space left.
-        if (!isValidQueueRequest(q) || isFull()) return;
+        if (isFull()) return;
 
         if (isEmpty(q)) {
             // if it is the first element of the queue then assign front and rear of the queue with free position.
@@ -154,15 +156,17 @@ class kQueues {
         // now nextFree is occupied so we need to assign the next free position to nextFree.
         this.nextFree = this.next[nextFree];
 
-        // adding the actual element in arr and marking the next of rear is -1.
+        // Store element and terminate queue link
         this.arr[rear[q]] = x;
         this.next[rear[q]] = -1;
     }
 
     // dequeue element from queue number 'q'
     public int dequeue(int q) {
+        validateQueue(q);
+
         // return -1 if queue is already empty.
-        if (!isValidQueueRequest(q) || isEmpty(q)) {
+        if (isEmpty(q)) {
             return -1;
         }
 
@@ -188,8 +192,7 @@ class kQueues {
 
     // check if queue 'q' is empty
     public boolean isEmpty(int q) {
-        // invalid queue request means that queue is empty.
-        if (!isValidQueueRequest(q)) return true;
+        validateQueue(q);
 
         // both front and rear of a queue are -1 means that queue is empty.
         return (rear[q] == -1 && front[q] == -1);
