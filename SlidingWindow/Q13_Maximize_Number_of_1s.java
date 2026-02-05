@@ -40,22 +40,28 @@ public class Q13_Maximize_Number_of_1s {
 
     /// Solution
     static int maxOnes(int[] arr, int k) {
-        // potd.code.hub
         int n = arr.length;
-        int ans = 0;
-
+        int max = 0;
+        int front = 0;
+        int back = 0;
         int count = 0;
-        int i = 0, j = 0;
-        while (j < n) {
-            if (arr[j] == 0) count++;
-            if (count > k) {
-                if (arr[i] == 0) count--;
-                i++;
+        
+        while(front < n) {
+            
+            // expanding the window
+            if(arr[front] == 0) count++;
+            front++;
+            
+            // reducing the window only if needed
+            while(count > k) {
+                if(arr[back] == 0) count--;
+                back++;
             }
-            j++;
-            ans = Math.max(ans, j - i);
+            
+            // updating the answer
+            max = Math.max(max, front - back);
         }
-
-        return ans;
+        
+        return max;
     }
 }
