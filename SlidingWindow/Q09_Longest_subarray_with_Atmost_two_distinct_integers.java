@@ -38,21 +38,22 @@ public class Q09_Longest_subarray_with_Atmost_two_distinct_integers {
     static int totalElements(int[] arr) {
         // potd.code.hub
         int n = arr.length;
-        int ans = 0;
+        int l = 0;
+        int maxLen = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        int p = 0;
-
-        for (int i = 0; i < n; i++) {
-            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+        for (int r = 0; r < n; r++) {
+            map.put(arr[r], map.getOrDefault(arr[r], 0) + 1);
+            
             while (map.size() > 2) {
-                map.put(arr[p], map.get(arr[p]) - 1);
-                if (map.get(arr[p]) == 0) map.remove(arr[p]);
-                p++;
+                map.put(arr[l], map.get(arr[l]) - 1);
+                if (map.get(arr[l]) == 0) map.remove(arr[l]);
+                l++;
             }
-            ans = Math.max(ans, i - p + 1);
+
+            maxLen = Math.max(maxLen, r - l + 1);
         }
 
-        return ans;
+        return maxLen;
     }
 }
