@@ -42,15 +42,21 @@ public class Dynamic_Programming_Dice_throw {
     /// Solution
     static int noOfWays(int m, int n, int x) {
         // potd.code.hub
-        int[][] dp = new int[n+1][x+1];
+
+        /*
+
+        int[][] dp = new int[n + 1][x + 1];
         for (int[] i : dp)
             Arrays.fill(i, -1);
 
-        return fm(m, n, x, dp);
+        */
+
+        return fso(m, n, x);
     }
+
 /**************************************************<---Memoization--->**************************************************/
 // TC: O(n * m * x)
-// SC: O(m*x + m*x)
+// SC: O(m * x) + recursive call stack
     private static int fm(int totalFace, int numOfDice, int target, int[][] dp) {
         // base case
         if (numOfDice == 0) {
@@ -70,5 +76,55 @@ public class Dynamic_Programming_Dice_throw {
         }
 
         return ways;
+    }
+
+/**************************************************<---Tabulation--->**************************************************/
+// TC: O(n * m * x)
+// SC: O(m * x)
+    private static int ft(int m, int n, int x) {
+        // potd.code.hub
+        int[][] dp = new int[n + 1][x + 1];
+        dp[0][0] = 1;
+
+        for (int dice = 1; dice <= n; dice++) {
+            for (int face = 1; face <= x; face++) {
+
+                for (int k = 1; k <= m; k++) {
+                    if(k > face) break;
+                    dp[dice][face] += dp[dice - 1][face - k];
+                }
+
+            }
+        }
+
+        return dp[n][x];
+    }
+
+/************************************************<---Space-Optimized--->************************************************/
+// TC: O(n * m * x)
+// SC: O(x)
+    private static int fso(int m, int n, int x) {
+        // potd.code.hub
+        int[] curr = new int[x + 1];
+        int[] prev = new int[x + 1];
+        prev[0] = 1;
+
+        for (int dice = 1; dice <= n; dice++) {
+            for (int face = 1; face <= x; face++) {
+
+                for (int k = 1; k <= m; k++) {
+                    if(k > face) break;
+                    curr[face] += prev[face - k];
+                }
+
+            }
+
+            int[] temp = curr;
+            curr = prev;
+            prev = temp;
+            Arrays.fill(curr, 0);
+        }
+
+        return prev[x];
     }
 }
