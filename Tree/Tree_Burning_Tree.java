@@ -104,18 +104,5 @@ public class Tree_Burning_Tree {
         return pair;
     }
 
-    // calculating
-    private static int downwardPath(Node root) {
-        // base case
-        if (root == null) return 0;
-
-        // recursive work
-        int left = downwardPath(root.left);
-        int right = downwardPath(root.right);
-
-        // self work
-        return Math.max(left, right) + 1;
-    }
-
     private record Pair(boolean targetExists, int downwardLength){}
 }
