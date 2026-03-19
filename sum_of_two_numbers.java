@@ -11,7 +11,7 @@ public class sum_of_two_numbers{
         int b = sc.nextInt();
  
         int sum = a + b;
-
+ 
         System.out.println("a + b = " + sum);
     }
 }
