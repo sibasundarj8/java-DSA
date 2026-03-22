@@ -63,6 +63,7 @@ public class Graph_Rotten_Oranges {
         int ans = 0;
         int n = mat.length;
         int m = mat[0].length;
+        int fresh = 0;
 
         Queue<Pair> q = new ArrayDeque<>();
         int[] dr = {-1, 0, 1, 0};
@@ -70,8 +71,12 @@ public class Graph_Rotten_Oranges {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
+                
                 if (mat[i][j] == 2) {
                     q.add(new Pair(i, j, 0));
+                } 
+                else if (mat[i][j] == 1) {
+                    fresh++;
                 }
             }
         }
@@ -90,15 +95,12 @@ public class Graph_Rotten_Oranges {
                 if (nr >= 0 && nr < n && nc >= 0 && nc < m && mat[nr][nc] == 1) {
                     mat[nr][nc] = 2;
                     q.add(new Pair(nr, nc, t + 1));
+                    fresh--;
                 }
             }
         }
 
-        for (int[] arr : mat) {
-            for (int j = 0; j < m; j++) {
-                if (arr[j] == 1) return -1;
-            }
-        }
+        if (fresh != 0) return -1;
 
         return ans;
     }
