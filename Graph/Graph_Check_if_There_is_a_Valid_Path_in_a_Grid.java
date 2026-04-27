@@ -52,8 +52,8 @@ package Graph;/*
  *          1 <= grid[i][j] <= 6
  */
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -104,7 +104,7 @@ public class Graph_Check_if_There_is_a_Valid_Path_in_a_Grid {
         // potd.code.hub
         int n = grid.length;
         int m = grid[0].length;
-        Queue<Pair> q = new LinkedList<>();
+        Queue<Pair> q = new ArrayDeque<>();
         boolean[][] visited = new boolean[n][m];
 
         q.add(new Pair(0, 0));
