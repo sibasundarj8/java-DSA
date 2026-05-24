@@ -52,8 +52,12 @@ public class Q3_Minimum_Operations_to_Sort_a_Permutation {
 
         if (dropsInc <= 1) {
             return Math.min(posInc, n - posInc + 2);
-        } else if (dropsDec <= 1) {
+        } 
+        
+        if (dropsDec <= 1) {
             return Math.min(posDec, n - posDec) + 1;
-        } else return -1;
+        } 
+        
+        return -1;
     }
 }
