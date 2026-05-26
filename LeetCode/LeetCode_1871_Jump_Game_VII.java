@@ -153,7 +153,7 @@ Reason:
         reachable[minJump]++;
         reachable[maxJump + 1]--;
 
-        for (int i = 1; i < n; i++) {
+        for (int i = minJump; i < n; i++) {
             reachable[i] += reachable[i - 1];
 
             if (i + minJump >= n) continue;
