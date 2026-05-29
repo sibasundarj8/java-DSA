@@ -16,7 +16,7 @@ package Bit_Manipulation;/*
 
 import java.util.Scanner;
 
-public class Count_set_bits {
+public class Count_set_bits_in_1_to_n {
 
     /// main Method
     public static void main(String[] args) {
