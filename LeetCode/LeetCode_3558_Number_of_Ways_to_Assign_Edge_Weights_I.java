@@ -29,6 +29,13 @@ package LeetCode;/*
  *              The maximum depth is 2, with nodes 4 and 5 at the same depth. Either node can be selected for processing.
  *              For example, the path from Node 1 to Node 4 consists of two edges (1 → 3 and 3 → 4).
  *              Assigning weights (1,2) or (2,1) results in an odd cost. Thus, the number of valid assignments is 2.
+ *
+ *  Constraints:
+ *        ◦ 2 <= n <= 10⁵
+ *        ◦ edges.length == n - 1
+ *        ◦ edges[i] == [u_i, v_i]
+ *        ◦ 1 <= u_i, v_i <= n
+ *        ◦ edges represents a valid tree.
  */
 
 import java.util.ArrayDeque;
