@@ -1,7 +1,7 @@
 package GFG;/*
  *
  * https://www.geeksforgeeks.org/problems/check-if-a-string-is-repetition-of-its-substring-of-k-length3302/1
- *
+ * 
  * # Check Repeated Substring with K Replacements
  *
  *   Q. Given a string s and an integer k, check if it is possible to convert s to a string that is repetition of a
