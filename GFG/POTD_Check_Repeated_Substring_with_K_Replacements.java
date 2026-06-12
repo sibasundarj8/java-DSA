@@ -47,8 +47,7 @@ public class POTD_Check_Repeated_Substring_with_K_Replacements {
         HashMap<String, Integer> map = new HashMap<>();
 
         for (int i = 0; i < n; i += k) {
-            int ub = Math.min(i + k, n);
-            String temp = s.substring(i, ub);
+            String temp = s.substring(i, i + k);
             map.put(temp, map.getOrDefault(temp, 0) + 1);
 
             if (map.size() > 2) return false;
