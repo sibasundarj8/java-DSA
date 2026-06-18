@@ -16,8 +16,8 @@ package Math_;/*
  *             \  8       |      4 /
  *               `.   7   6   5  .'
  *                  `-._____.- '
- *      Input : hour = 3, minutes = 30
- *      Output: 75
+ *      Input : hour = 12, minutes = 30
+ *      Output: 165.0
  *
  *  Constraints:
  *      1 <= hour <= 12
