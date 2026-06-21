@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class S16_Words_Within_Two_Edits_of_Dictionary {
+public class S17_Words_Within_Two_Edits_of_Dictionary {
 
     /// main Method
     public static void main(String[] args) {
