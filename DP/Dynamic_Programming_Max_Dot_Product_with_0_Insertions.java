@@ -1,4 +1,4 @@
-package DP;/* 
+package DP;/*
  *
  * https://www.geeksforgeeks.org/problems/maximize-dot-product2649/1
  *
