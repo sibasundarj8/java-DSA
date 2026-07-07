@@ -6,7 +6,7 @@ This repository contains the solution for the **"Two Knights"** problem from the
 
 Given an integer **n**, for every board size **k × k** where **1 ≤ k ≤ n**, determine the number of ways to place **two knights** on the chessboard such that they **do not attack each other**.
 
-_**Note:** there is two possibilities,_ 
+_**Note:** there are two possibilities,_ 
 * _position_A = **black** knight, position_B = **white** knight_
 * _position_A = **white** knight, position_B = **black** knight_
 * _it should be counted as **one knight placement** not two._
