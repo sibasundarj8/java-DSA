@@ -9,8 +9,8 @@ public class Solution {
 
         for (long i = 1; i <= n; i++) {
             long total_cells = i * i;
-            long total_ways = (total_cells * (total_cells - 1)) / 2;
-            long red_zone = (i >= 3) ? ((i - 2) * (i - 1) * 2) * 2 : 0;
+            long total_ways = (total_cells * (total_cells - 1)) >> 1;
+            long red_zone = (i >= 3) ? ((i - 2) * (i - 1) * 2) << 1 : 0;
 
             bw.write((total_ways - red_zone) + "\n");
         }
