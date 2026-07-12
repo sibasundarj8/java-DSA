@@ -5,7 +5,7 @@ package PriorityQueue;/*
  * # Max Amount by Selling K Tickets
  *
  *   Q. Given an integer array arr[], where arr[i] denotes the number of tickets available with the i-th ticket seller.
- *
+ * 
  *      ◦ The price of each ticket is equal to the number of tickets remaining with that seller at the time of sale.
  *
  *      ◦ A seller can sell at most one ticket at a time, and after each sale, the price of the next ticket from that
