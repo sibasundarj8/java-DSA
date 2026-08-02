@@ -22,7 +22,7 @@ package GFG;/*
  *  Constraints:
  *       1 ≤ n ≤ 11
  *       1 ≤ m ≤ 11
- */
+ */ 
 
 import java.util.Arrays;
 import java.util.Scanner;
