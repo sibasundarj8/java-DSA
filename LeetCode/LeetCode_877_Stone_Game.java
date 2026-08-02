@@ -63,8 +63,8 @@ public class LeetCode_877_Stone_Game {
     /// Solution
 /*
 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯-memoization-⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
-TC : O(n × m)
-SC : O(n × m²)
+TC : O(n²)
+SC : O(n²)
 */
     static boolean approach_1(int[] piles) {
         int n = piles.length;
