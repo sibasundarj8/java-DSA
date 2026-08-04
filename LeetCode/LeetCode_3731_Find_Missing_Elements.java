@@ -44,7 +44,7 @@ public class LeetCode_3731_Find_Missing_Elements {
             arr[i] = Integer.parseInt(s[i]);
         }
 
-        System.out.println("Mising number in that range: ");
+        System.out.println("Missing number in that range: ");
         System.out.println(findMissingElements(arr));
     }
 
