@@ -13,3 +13,4 @@ This repository is all about data structures and algorithms implemented using Ja
 
 [![spotify ](https://img.shields.io/badge/Spotif-1ed760?&style=for-the-badge&logo=spotify&logoColor=black)](https://open.spotify.com/playlist/1GPpJXdiz2NO8zmfqZ8Jw0?si=3738486fa9d4468e)
  
+[![GeeksforGeeks Stats](https://geeksforgeekscard.up.railway.app/sibasundarj8?theme=dark)](https://www.geeksforgeeks.org/profile/sibasundarj8)
