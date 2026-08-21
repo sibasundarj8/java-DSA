@@ -66,7 +66,7 @@ public class LeetCode_3116_Kth_Smallest_Amount_With_Single_Denomination_Combinat
     }
 
     /// Solution
-    public static long findKthSmallest(int[] coins, int k) {
+    static long findKthSmallest(int[] coins, int k) {
 
         int n = coins.length;
         boolean flag;
@@ -82,7 +82,7 @@ public class LeetCode_3116_Kth_Smallest_Amount_With_Single_Denomination_Combinat
                     break;
                 }
             }
-            if (flag){
+            if (flag) {
                 count++;
                 smallest = Math.min(smallest, coins[i]);
                 take[i] = true;
@@ -92,49 +92,62 @@ public class LeetCode_3116_Kth_Smallest_Amount_With_Single_Denomination_Combinat
         int[] newCoins = new int[count];
         int x = 0;
         for (int i = 0; i < n; i++) {
-            if (take[i]){
+            if (take[i]) {
                 newCoins[x++] = coins[i];
             }
         }
 
+        boolean[] odd = new boolean[1 << newCoins.length];
+        long[] lcm = preCalculateLcm(newCoins, odd);
         long i = 1;
         long j = smallest * (long) k;
 
         while (i <= j) {
             long mid = i + ((j - i) >> 1);
-            if (getIndex(newCoins, mid) >= k) j = mid - 1;
+            if (getIndex(newCoins, mid, lcm, odd) >= k) j = mid - 1;
             else i = mid + 1;
         }
 
         return i;
     }
 
-    private static long getIndex(int[] coins, long value) {
+    private static long getIndex(int[] coins, long value, long[] getLcm, boolean[] odd) {
         int n = coins.length;
         int limit = (1 << n) - 1;
-        long lcm;
         long add;
         boolean plus;
         long count = 0;
 
         for (int mask = 1; mask <= limit; mask++) {
-            lcm = 1;
-            plus = false;
-
-            for (int i = 0; i < n; i++) {
-                if (((mask >> i) & 1) == 1) {
-                    lcm = getLcm(lcm, coins[i]);
-                    plus ^= true;
-                }
-            }
-
-            if (lcm <= value) {
-                add = value / lcm;
-                count += (plus ? add : -add);
+            if (getLcm[mask] <= value) {
+                add = value / getLcm[mask];
+                count += odd[mask] ? add : -add;
             }
         }
 
         return count;
+    }
+
+    private static long[] preCalculateLcm(int[] coins, boolean[] odd) {
+        int n = coins.length;
+        int limit = (1 << n) - 1;
+        long x = 1;
+        long[] lcm = new long[limit + 1];
+
+        for (int mask = 1; mask <= limit; mask++) {
+            x = 1;
+
+            for (int i = 0; i < n; i++) {
+                if (((mask >> i) & 1) == 1) {
+                    odd[mask] ^= true;
+                    x = getLcm(x, coins[i]);
+                }
+            }
+
+            lcm[mask] = x;
+        }
+
+        return lcm;
     }
 
     private static long getLcm(long a, long b) {
