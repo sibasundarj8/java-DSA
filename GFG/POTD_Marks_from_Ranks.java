@@ -16,7 +16,7 @@ package GFG;/*
  *
  *    Ex.
  *      Input : l[] = [1, 6, 14],
- *              r[] = [3, 9, 15],
+ *              r[] = [3, 9, 15], 
  *              rank[] = [2, 5, 8]
  *      Output: [2, 7, 14]
  *      Explanation: The valid marks are 1, 2, 3, 6, 7, 8, 9, 14, 15. Their corresponding ranks are 1 to 9 as there are
