@@ -9,6 +9,7 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        // input
         int n = Integer.parseInt(br.readLine().trim());
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -20,6 +21,7 @@ public class Solution {
             totalSum += weights[i];
         }
 
+        // calculation
         long minDiff = Long.MAX_VALUE;
         long subsetSum, difference;
 
