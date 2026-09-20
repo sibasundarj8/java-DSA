@@ -94,7 +94,7 @@ public class Matrix_Largest_Subsquare_Surrounded_by_X {
                 // calculating square with boundary X
                 size = Math.min(right, bottom[j]);
 
-                for (int x = size - 1; x >= 0; x--) {
+                for (int x = size - 1; x >= max; x--) {
                     int i1 = i + x;
                     int j1 = j + x;
 
