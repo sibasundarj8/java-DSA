@@ -39,7 +39,7 @@ package Greedy;/*
 
 import java.util.Scanner;
 
-public class G17_2333_Minimum_Sum_of_Squared_Difference {
+public class G17_Minimum_Sum_of_Squared_Difference {
 
     /// main Method
     public static void main(String[] args) {
